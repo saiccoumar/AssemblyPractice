@@ -1,0 +1,15 @@
+Instructions to run assembly code using NASM
+
+- create/edit assembly code in a text editor
+- launch wsl with ubuntu 
+
+32-bit
+nasm -f elf file.asm -o file.o
+gcc -nostartfiles -no-pie -o file -m32 file.o
+./file
+
+64-bit
+nasm -f elf64 file.asm -o file.o
+gcc -nostartfiles -no-pie -o file -m64 file.o
+./file
+
