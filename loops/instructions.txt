@@ -1,0 +1,22 @@
+Compile loops.asm with the following
+nasm -f elf64 loops.asm -o loops.o
+gcc -nostartfiles -no-pie -o loops -m64 loops.o
+
+Since there's no printed output, use gdb to view the function running. 
+
+Run using 
+gdb ./loops
+
+set a breakpoint at the start 
+_start
+
+Step through Instructions
+si
+
+After the first si you'll see the label change from _start() to loop_start()
+
+View register info
+info registers
+
+View a specific register (the counter being incremented after every iteration)
+info registers ecx
