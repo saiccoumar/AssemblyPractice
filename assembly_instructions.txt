@@ -1,5 +1,4 @@
 Instructions to run assembly code using NASM
-
 - create/edit assembly code in a text editor
 - launch wsl with ubuntu 
 
@@ -13,3 +12,10 @@ nasm -f elf64 file.asm -o file.o
 gcc -nostartfiles -no-pie -o file -m64 file.o
 ./file
 
+Using GDB to debug
+
+gdb file
+si (step through instruction)
+info registers (show register info)
+info registers register_name (show register info for a specific register)
+TUI ctrl-x + ctrl-a (doesn't work well for assembly)
